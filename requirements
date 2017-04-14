@@ -1,0 +1,4 @@
+Django==1.10
+gunicorn==19.7.1
+requests==2.13.0
+selenium==3.0.1
