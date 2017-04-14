@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spell-Checker</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="text-header">
+            <h1>Spell-Checker</h1>
+        </div>    
+        <br>
+        <form method="POST" action="/spell-checker/spell-check" class="form">
+            <textarea name="text-to-check" id="text-to-check" placeholder="Enter a text to check" class="form-control">{{fields.text_to_check}}</textarea>
+            {% if text_checked %}
+                <br>
+                <div class="well">
+                    <p id="expected-text">{{text_checked}}</p>
+                </div>        
+            {% endif %}
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            {% csrf_token %}
+        </form>
+    </div>
+</body>
+</html>

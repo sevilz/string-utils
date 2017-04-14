@@ -31,6 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    #Custom
+    'spellchecker.apps.SpellcheckerConfig',
+    #Default
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -115,6 +118,11 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.11/howto/static-files/
+# https://docs.djangoproject.com/en/1.11/howto/static-files
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.abspath(os.path.join(BASE_DIR, '../static'))
+
+#Constants
+BING_SPELL_CHECK_API_KEY = '627ad552ff364142a0e34526077cab01'
+BING_SPELL_CHECK_ENDPOINT = 'https://api.cognitive.microsoft.com/bing/v5.0/SpellCheck'

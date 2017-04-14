@@ -16,6 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+import spellchecker.views
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^spell-checker/$', spellchecker.views.view_spellchecker, name='spell-checker'),
+    url(r'^spell-checker/spell-check$', spellchecker.views.spellcheck, name='spell-check'),
 ]
